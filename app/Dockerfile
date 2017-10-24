@@ -18,4 +18,4 @@ WORKDIR /home/bitcoind-testnet
 # EXPOSE rpc port for the node to allow outside container access
 EXPOSE 12001
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["bitcoind"]

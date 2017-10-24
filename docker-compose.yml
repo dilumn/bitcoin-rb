@@ -3,7 +3,17 @@ version: '2'
 services:
   app:
     build: ./app
-    # ports:
-    #   - "30303:30303"
-    #   - "30303:30303/udp"
-    #   - "8545:8545"
+    # command: -datadir=node
+    volumes:
+      - ./app:/app
+    command:
+      -printtoconsole
+      -testnet=1
+      -rest
+      -rpcallowip=0.0.0.0/0
+      -rpcpassword=bar
+      -rpcport=18333
+      -rpcuser=foo
+      -server
+    ports:
+      - 18333:18333
