@@ -15,5 +15,12 @@ services:
       -rpcport=18333
       -rpcuser=foo
       -server
+      -txindex
     ports:
       - 18333:18333
+
+# https://docs.docker.com/compose/networking/#configuring-the-default-network, "Using a pre-existing network"
+networks:
+  default:
+    external:
+      name: bigapirb_default
